@@ -17,11 +17,11 @@ class Comments extends Component
     }
     public function addComment(){
         if (strlen($this->newComment) < 3) return  ;
-        Comment::create([
+        $newComment = Comment::create([
             'body' => $this->newComment,
             'user' => mt_rand(1,4)
         ]);
-        $this->mount();
+        $this->comments->push($newComment);
         $this->newComment = '';
     }
 
