@@ -17,6 +17,9 @@ class Comments extends Component
         ]
     ];
 
+    public function mount(){
+        $this->newComment = 'I am from mounted';
+    }
     public function addComment(){
         if (strlen($this->newComment) < 3) return  ;
         array_unshift($this->comments, [
