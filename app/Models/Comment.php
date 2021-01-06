@@ -10,6 +10,6 @@ class Comment extends Model
     use HasFactory;
     protected $guarded = [];
     public function author(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App\Models\User', 'user');
     }
 }
