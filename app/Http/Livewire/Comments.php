@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Carbon\Carbon;
 use Livewire\Component;
 use Illuminate\Support\Str;
+use App\Models\Comment;
 
 class Comments extends Component
 {
@@ -17,8 +18,8 @@ class Comments extends Component
         ]
     ];
 
-    public function mount($newComment){
-        $this->newComment = $newComment;
+    public function mount(){
+        $this->comments = Comment::all();
     }
     public function addComment(){
         if (strlen($this->newComment) < 3) return  ;

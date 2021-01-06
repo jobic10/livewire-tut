@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    @livewire('comments', ['newComment' => 'comments']) }}
+    @livewire('comments')
     {{-- <livewire:comments newComment='I am props comment' /> --}}
     @livewireScripts
 </body>
