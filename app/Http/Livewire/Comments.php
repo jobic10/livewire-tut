@@ -13,7 +13,7 @@ class Comments extends Component
     public $comments ;
 
     public function mount(){
-        $this->comments = Comment::all();
+        $this->comments = Comment::latest()->get();
     }
     public function addComment(){
         if (strlen($this->newComment) < 3) return  ;
