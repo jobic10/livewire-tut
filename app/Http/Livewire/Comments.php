@@ -18,6 +18,7 @@ class Comments extends Component
     ];
 
     public function addComment(){
+        if (strlen($this->newComment) < 3) return  ;
         array_unshift($this->comments, [
             'body' => $this->newComment,
             'created_at' => Carbon::now()->diffForHumans(),
