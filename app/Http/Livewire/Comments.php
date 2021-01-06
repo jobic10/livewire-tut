@@ -2,10 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use Carbon\Carbon;
+use Facade\Ignition\Support\FakeComposer;
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class Comments extends Component
 {
+    public $newComment;
     public $comments = [
         [
             'body' => 'Livewire is cool',
@@ -16,10 +20,11 @@ class Comments extends Component
 
     public function addComment(){
         array_unshift($this->comments, [
-            'body' => 'Livewire is super cool',
-            'created_at' => '1 Min Ago',
-            'author' => 'Akinola Roseline'
+            'body' => $this->newComment,
+            'created_at' => Carbon::now()->diffForHumans(),
+            'author' => Str::random()
         ]);
+        $this->newComment = '';
     }
 
     public function render()
