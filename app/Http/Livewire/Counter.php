@@ -6,6 +6,9 @@ use Livewire\Component;
 
 class Counter extends Component
 {
+    public function increment(){
+        dd('JOb');
+    }
     public function render()
     {
         return view('livewire.counter');

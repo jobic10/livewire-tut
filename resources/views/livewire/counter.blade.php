@@ -1,3 +1,5 @@
-<div>
-<h3>Hello World</h3>
+<div style="text-align: center">
+    <button wire:click='increment'>+</button>
+    <h3>1</h3>
+    <button>-</button>
 </div>
