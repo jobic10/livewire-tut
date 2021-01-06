@@ -15,11 +15,11 @@ class Comments extends Component
     ];
 
     public function addComment(){
-        $this->comments[] = [
-            'body' => 'Livewire is cool',
-            'created_at' => '2 Mins Ago',
-            'author' => 'Owonubi Job Sunday'
-        ];
+        array_unshift($this->comments, [
+            'body' => 'Livewire is super cool',
+            'created_at' => '1 Min Ago',
+            'author' => 'Akinola Roseline'
+        ]);
     }
 
     public function render()
