@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use Carbon\Carbon;
-use Facade\Ignition\Support\FakeComposer;
 use Livewire\Component;
 use Illuminate\Support\Str;
 
