@@ -8,7 +8,7 @@ class Counter extends Component
 {
     public $count = 10;
     public function increment(){
-        dd('JOb');
+        $this->count++;
     }
     public function decrement(){
         //
