@@ -10,13 +10,7 @@ use App\Models\Comment;
 class Comments extends Component
 {
     public $newComment;
-    public $comments = [
-        [
-            'body' => 'Livewire is cool',
-            'created_at' => '2 Mins Ago',
-            'author' => 'Owonubi Job Sunday'
-        ]
-    ];
+    public $comments ;
 
     public function mount(){
         $this->comments = Comment::all();
