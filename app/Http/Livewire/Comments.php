@@ -21,7 +21,7 @@ class Comments extends Component
             'body' => $this->newComment,
             'user' => mt_rand(1,4)
         ]);
-        $this->comments->push($dbComment);
+        $this->comments->prepend($dbComment);
         $this->newComment = '';
     }
 
