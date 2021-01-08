@@ -10,7 +10,7 @@ use DateTime;
 class Comments extends Component
 {
     public $newComment;
-    public $comments ;
+    // public $comments ;
 
     public function deleteComment($commentId){
         $comment = Comment::find($commentId);
@@ -21,7 +21,7 @@ class Comments extends Component
 
     }
     public function mount(){
-        $this->comments = Comment::latest()->get();
+        // $this->comments = Comment::latest()->paginate();
     }
     public function updated($field){
         $this->validateOnly($field, [
@@ -43,7 +43,7 @@ class Comments extends Component
 
     public function render()
     {
-        return view('livewire.comments');
+    return view('livewire.comments', ['comments' => Comment::latest()->paginate(5)]);
     }
 }
 
