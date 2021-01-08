@@ -23,7 +23,7 @@ class Comments extends Component
     }
     public function updated($field){
         $this->validateOnly($field, [
-            'newComment' => 'required|min:5'
+            'newComment' => 'required|min:2'
         ]);
     }
     public function addComment(){
@@ -36,6 +36,7 @@ class Comments extends Component
         ]);
         $this->comments->prepend($dbComment);
         $this->newComment = '';
+        session()->flash('message', 'New Comment Added');
     }
 
     public function render()
@@ -43,3 +44,7 @@ class Comments extends Component
         return view('livewire.comments');
     }
 }
+
+?>
+
+
