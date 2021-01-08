@@ -15,6 +15,11 @@ class Comments extends Component
     public function mount(){
         $this->comments = Comment::latest()->get();
     }
+    public function updated($field){
+        $this->validateOnly($field, [
+            'newComment' => 'required|min:5'
+        ]);
+    }
     public function addComment(){
         $this->validate([
             'newComment' => 'required'
