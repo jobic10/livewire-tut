@@ -15,7 +15,8 @@ class Comments extends Component
     public function deleteComment($commentId){
         $comment = Comment::find($commentId);
         if ($comment) $comment->delete();
-        $this->comments = $this->comments->where('id', '!=', $commentId);
+        // $this->comments = $this->comments->where('id', '!=', $commentId);
+        $this->comments = $this->comments->except($commentId);
     }
     public function mount(){
         $this->comments = Comment::latest()->get();
