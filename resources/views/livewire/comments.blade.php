@@ -6,15 +6,16 @@
             {{ $message }}
         </span>
     @enderror
-    <form class="my-4 flex" wire:submit.prevent='addComment'>
-        <div class="">
-            @if (session()->has('message'))
-            <div class="alert alert-info">
-                {{ session('message') }}
-            </div>
-
-            @endif
+    <div>
+        @if (session()->has('message'))
+        <div class='p-3 bg-green-300 text-green-700 rounded shadow-sm'>
+            {{ session('message') }}
         </div>
+
+        @endif
+    </div>
+    <form class="my-4 flex" wire:submit.prevent='addComment'>
+
         <input wire:model='newComment' type="text" name="" id="" placeholder="What's New ?" class="w-full rounded border shadow p-2 mr-2 my-2">
         <div class="py-2">
             <button type='submit' class="p-2 bg-blue-500 w-20 rounded shadow text-white">Add</button>
