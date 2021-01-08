@@ -35,13 +35,16 @@ class Comments extends Component
             'body' => $this->newComment,
             'user' => mt_rand(1,4)
         ]);
-        $this->newComment = ''; 
+        $this->newComment = '';
         session()->flash('message', 'New Comment Added');
     }
 
     public function render()
     {
-    return view('livewire.comments', ['comments' => Comment::latest()->paginate(5)]);
+        if (session('message'))
+        $this->resetPage();
+        $comments = Comment::latest()->paginate(5);
+    return view('livewire.comments', ['comments' => $comments]);
     }
 }
 
