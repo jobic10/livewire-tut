@@ -12,6 +12,10 @@ class Comments extends Component
     public $newComment;
     public $comments ;
 
+    public function deleteComment($commentId){
+        $comment = Comment::find($commentId);
+        if ($comment) $comment->delete();
+    }
     public function mount(){
         $this->comments = Comment::latest()->get();
     }

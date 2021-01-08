@@ -20,7 +20,7 @@
                 <p class="font-bold text-lg">{{ $comment->author->name }}</p>
                 <p class="mx-3 py-1 text-xs text-gray-500 font-semibold">{{ $comment->created_at->diffForHumans() }}</p>
             </div>
-            <i class="fas  fa-times text-red-200 hover:text-red-600 cursor-pointer"></i>
+            <i class="fas fa-times text-red-200 hover:text-red-600 cursor-pointer" wire:click='deleteComment({{ $comment->id }})'></i>
         </div>
         <p class="text-gray-800">{{ $comment->body }}</p>
     </div>
