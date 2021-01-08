@@ -6,9 +6,11 @@ use Livewire\Component;
 use Illuminate\Support\Str;
 use App\Models\Comment;
 use DateTime;
+use Livewire\WithPagination;
 
 class Comments extends Component
 {
+    use WithPagination;
     public $newComment;
 
     public function deleteComment($commentId){
