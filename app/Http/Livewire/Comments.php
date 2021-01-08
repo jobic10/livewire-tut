@@ -16,7 +16,9 @@ class Comments extends Component
         $this->comments = Comment::latest()->get();
     }
     public function addComment(){
-        if (strlen($this->newComment) < 3) return  ;
+        $this->validate([
+            'newComment' => 'required'
+        ]);
         $dbComment = Comment::create([
             'body' => $this->newComment,
             'user' => mt_rand(1,4)
