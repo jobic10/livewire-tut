@@ -10,19 +10,16 @@ use DateTime;
 class Comments extends Component
 {
     public $newComment;
-    // public $comments ;
 
     public function deleteComment($commentId){
         $comment = Comment::find($commentId);
         if ($comment) $comment->delete();
         // $this->comments = $this->comments->where('id', '!=', $commentId);
-        $this->comments = $this->comments->except($commentId);
+        // $this->comments = $this->comments->except($commentId);
         session()->flash('message', 'Comment Deleted!');
 
     }
-    public function mount(){
-        // $this->comments = Comment::latest()->paginate();
-    }
+
     public function updated($field){
         $this->validateOnly($field, [
             'newComment' => 'required|min:2'
