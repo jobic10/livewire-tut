@@ -51,7 +51,6 @@
         let reader = new FileReader();
         reader.onloadend = () => {
             window.livewire.emit('fileUpload', reader.result);
-            console.log(reader.result);
         }
         reader.readAsDataURL(file);
     })
