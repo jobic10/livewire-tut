@@ -12,6 +12,7 @@ class Comments extends Component
 {
     use WithPagination;
     public $newComment;
+    public $image;
 
     public function deleteComment($commentId){
         $comment = Comment::find($commentId);

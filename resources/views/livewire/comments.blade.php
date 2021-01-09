@@ -14,6 +14,10 @@
 
         @endif
     </div>
+    <section>
+        {{-- {{ $image }} --}}
+        <input type="file" id="image" wire:change="$emit('fileChosen')">
+    </section>
     <form class="my-4 flex" wire:submit.prevent='addComment'>
 
         <input wire:model='newComment' type="text" name="" id="" placeholder="What's New ?" class="w-full rounded border shadow p-2 mr-2 my-2">
@@ -37,3 +41,9 @@
     {{ $comments->links('pagination-links') }}
     </div>
 </div>
+
+<script>
+    window.livewire.on('fileChosen', () => {
+        alert('ss');
+    })
+</script>
