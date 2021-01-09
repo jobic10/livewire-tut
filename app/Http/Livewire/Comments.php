@@ -14,6 +14,12 @@ class Comments extends Component
     public $newComment;
     public $image;
 
+    protected $listeners = ['fileUpload' => 'processFileUpload'];
+
+    public function processFileUpload($imageData){
+        $this->image = $imageData;
+    }
+
     public function deleteComment($commentId){
         $comment = Comment::find($commentId);
         if ($comment) $comment->delete();
