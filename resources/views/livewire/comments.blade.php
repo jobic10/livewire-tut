@@ -15,7 +15,9 @@
         @endif
     </div>
     <section>
-       <img src=" {{ $image }}" width="200" height="200" alt="">
+        @if ($image)
+        <img src=" {{ $image }}" width="200" height="200" alt="">
+        @endif
         <input type="file" id="image" wire:change="$emit('fileChosen')">
     </section>
     <form class="my-4 flex" wire:submit.prevent='addComment'>
