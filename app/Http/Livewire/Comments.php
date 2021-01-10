@@ -6,6 +6,8 @@ use Livewire\Component;
 use Illuminate\Support\Str;
 use App\Models\Comment;
 use DateTime;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic;
 use Livewire\WithPagination;
 
 class Comments extends Component
@@ -34,15 +36,27 @@ class Comments extends Component
             'newComment' => 'required|min:2'
         ]);
     }
+
+    public function storeImage(){
+        if (!$this->image) dd("No");
+        $img = ImageManagerStatic::make($this->image)->encode('jpg');
+        $path = 'image'.mt_rand(1,10000).'.jpg';
+        Storage::disk('public')->put($path, $img);
+        return $path;
+
+    }
+
     public function addComment(){
         $this->validate([
             'newComment' => 'required'
         ]);
+        $image = $this->storeImage();
         $dbComment = Comment::create([
             'body' => $this->newComment,
             'user' => mt_rand(1,4)
         ]);
         $this->newComment = '';
+        $this->image = '';
         session()->flash('message', 'New Comment Added');
     }
 
