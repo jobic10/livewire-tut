@@ -16,7 +16,7 @@
     </div>
     <section>
         @if ($image)
-        <img src=" {{ $image }}" width="200" height="200" alt="">
+        <img src=" {{ $image }}" width="200" id='image' height="200" alt="">
         @endif
         <input type="file" id="image" wire:change="$emit('fileChosen')">
     </section>
