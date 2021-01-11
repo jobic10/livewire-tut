@@ -14,8 +14,19 @@ class Comments extends Component
     public $newComment;
     public $image;
     public $ticketId = 1;
-    protected $listeners = ['fileUpload' => 'processFileUpload'];
+    protected $listeners = [
+        'fileUpload' => 'processFileUpload',
+        'ticketSelected' =>  'ticketSelected'
+        /* or
+        ticketSelected,
+        */
 
+
+    ];
+
+    public function ticketSelected($id){
+        $this->ticketId = $id;
+    }
     public function processFileUpload($imageData){
         $this->image = $imageData;
     }
