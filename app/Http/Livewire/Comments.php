@@ -16,10 +16,7 @@ class Comments extends Component
     public $ticketId;
     protected $listeners = [
         'fileUpload' => 'processFileUpload',
-        'ticketSelected' =>  'ticketSelected'
-        /* or
-        ticketSelected,
-        */
+        'ticketSelected'
 
 
     ];
