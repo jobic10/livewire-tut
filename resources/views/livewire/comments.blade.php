@@ -38,6 +38,9 @@
             <i class="fas fa-times text-red-200 hover:text-red-600 cursor-pointer" wire:click='deleteComment({{ $comment->id }})'></i>
         </div>
         <p class="text-gray-800 break-words">{{ $comment->body }}</p>
+        @if ($comment->image)
+            <img src="{{ asset('storage/'.$comment->image) }}" alt="">
+        @endif
     </div>
     @endforeach
     {{ $comments->links('pagination-links') }}
