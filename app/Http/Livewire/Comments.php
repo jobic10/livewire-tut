@@ -76,7 +76,7 @@ class Comments extends Component
     {
         if (session('message'))
         $this->resetPage();
-        $comments = Comment::latest()->paginate(5);
+        $comments = Comment::where('support_ticket_id', $this->ticketId)->paginate(5);
     return view('livewire.comments', ['comments' => $comments]);
     }
 
