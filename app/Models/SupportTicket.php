@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SupportTicker extends Model
+class SupportTicket extends Model
 {
-    use HasFactory;
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }

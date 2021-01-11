@@ -14,6 +14,7 @@
 
 </head>
 <body>
+    @livewire('tickets')
     @livewire('comments')
     {{-- <livewire:comments newComment='I am props comment' /> --}}
 </body>

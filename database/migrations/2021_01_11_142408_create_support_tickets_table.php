@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSupportTickersTable extends Migration
+class CreateSupportTicketsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateSupportTickersTable extends Migration
      */
     public function up()
     {
-        Schema::create('support_tickers', function (Blueprint $table) {
+        Schema::create('support_tickets', function (Blueprint $table) {
             $table->id();
+            $table->string('question');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateSupportTickersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('support_tickers');
+        Schema::dropIfExists('support_tickets');
     }
 }
