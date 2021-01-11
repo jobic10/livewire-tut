@@ -22,8 +22,11 @@ class Comments extends Component
 
     public function deleteComment($commentId){
         $comment = Comment::find($commentId);
-        if ($comment) $comment->delete();
-        session()->flash('message', 'Comment Deleted!');
+        if ($comment){
+            if ($comment->image) Storage::disk('public')->delete($comment->image);
+            $comment->delete();
+            session()->flash('message', 'Comment Deleted!');
+        }
 
     }
 
