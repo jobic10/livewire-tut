@@ -13,7 +13,7 @@ class Comments extends Component
     use WithPagination;
     public $newComment;
     public $image;
-
+    public $ticketId = 1;
     protected $listeners = ['fileUpload' => 'processFileUpload'];
 
     public function processFileUpload($imageData){
@@ -54,6 +54,7 @@ class Comments extends Component
             'body' => $this->newComment,
             'user' => mt_rand(1,4),
             'image' => $image,
+            'support_ticket_id' => $this->ticketId
         ]);
         $this->newComment = '';
         $this->image = '';

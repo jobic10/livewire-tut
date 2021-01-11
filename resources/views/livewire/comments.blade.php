@@ -1,3 +1,4 @@
+    <div class="w-12/12">
     <h1 class="my-1o text-3xl">Comments</h1>
     @error('newComment')
         <span class="text-red-500 text-xs">
@@ -36,10 +37,7 @@
             <i class="fas fa-times text-red-200 hover:text-red-600 cursor-pointer" wire:click='deleteComment({{ $comment->id }})'></i>
         </div>
         <p class="text-gray-800 break-words">{{ $comment->body }}</p>
-        @if ($comment->image)
-        {{-- {{ dd($comment) }} --}}
-            <img src="{{ $comment->ImagePath }}" alt="">
-        @endif
+
     </div>
     @endforeach
     {{ $comments->links('pagination-links') }}
