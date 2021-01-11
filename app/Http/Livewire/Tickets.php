@@ -6,7 +6,7 @@ use Livewire\Component;
 use App\Models\SupportTicket;
 class Tickets extends Component
 {
-    public $active;
+    public $active = 1;
 
     protected $listeners = [
         'ticketSelected'
