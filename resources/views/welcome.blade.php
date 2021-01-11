@@ -13,9 +13,15 @@
     @livewireScripts
 
 </head>
-<body>
-    @livewire('tickets')
-    @livewire('comments')
+<body class="flex justify-center">
+    <div class="my-10 flex w-10/12">
+    <div class="rounded border p-2 w-5/12">
+        @livewire('tickets')
+    </div>
+    <div class="rounded border p-2 w-7/12">
+        @livewire('comments')
+    </div>
+    </div>
     {{-- <livewire:comments newComment='I am props comment' /> --}}
 </body>
 </html>
