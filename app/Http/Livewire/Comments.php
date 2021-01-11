@@ -13,7 +13,7 @@ class Comments extends Component
     use WithPagination;
     public $newComment;
     public $image;
-    public $ticketId = 1;
+    public $ticketId;
     protected $listeners = [
         'fileUpload' => 'processFileUpload',
         'ticketSelected' =>  'ticketSelected'
