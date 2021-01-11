@@ -1,5 +1,3 @@
-<div class="flex justify-center">
-    <div class="w-6/12">
     <h1 class="my-1o text-3xl">Comments</h1>
     @error('newComment')
         <span class="text-red-500 text-xs">
