@@ -68,6 +68,7 @@ class Comments extends Component
         $comments = Comment::latest()->paginate(5);
     return view('livewire.comments', ['comments' => $comments]);
     }
+
 }
 
 ?>

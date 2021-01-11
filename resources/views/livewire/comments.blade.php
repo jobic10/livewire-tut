@@ -39,7 +39,8 @@
         </div>
         <p class="text-gray-800 break-words">{{ $comment->body }}</p>
         @if ($comment->image)
-            <img src="{{ asset('storage/'.$comment->image) }}" alt="">
+        {{-- {{ dd($comment) }} --}}
+            <img src="{{ $comment->ImagePath }}" alt="">
         @endif
     </div>
     @endforeach
