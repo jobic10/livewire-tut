@@ -3,7 +3,7 @@
 
 @foreach ($tickets as $ticket)
 
-<div class="rounded border shadow p-3 my-2" wire:click="$emit('ticketSelected', {{ $ticket->id }})">
+<div class=" cursor-pointer rounded {{ $active == $ticket->id ? 'bg-gray-400': ''}} border shadow p-3 my-2" wire:click="$emit('ticketSelected', {{ $ticket->id }})">
 
     <p class="text-gray-800 break-words">{{ $ticket->question }}</p>
 
