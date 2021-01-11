@@ -3,9 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use Illuminate\Support\Str;
 use App\Models\Comment;
-use DateTime;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic;
 use Livewire\WithPagination;
@@ -25,8 +23,6 @@ class Comments extends Component
     public function deleteComment($commentId){
         $comment = Comment::find($commentId);
         if ($comment) $comment->delete();
-        // $this->comments = $this->comments->where('id', '!=', $commentId);
-        // $this->comments = $this->comments->except($commentId);
         session()->flash('message', 'Comment Deleted!');
 
     }
