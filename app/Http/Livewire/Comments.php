@@ -38,7 +38,7 @@ class Comments extends Component
     }
 
     public function storeImage(){
-        if (!$this->image) dd("No");
+        if (!$this->image) return null;
         $img = ImageManagerStatic::make($this->image)->encode('jpg');
         $path = 'image'.mt_rand(1,10000).'.jpg';
         Storage::disk('public')->put($path, $img);
@@ -53,7 +53,8 @@ class Comments extends Component
         $image = $this->storeImage();
         $dbComment = Comment::create([
             'body' => $this->newComment,
-            'user' => mt_rand(1,4)
+            'user' => mt_rand(1,4),
+            'image' => $image,
         ]);
         $this->newComment = '';
         $this->image = '';
