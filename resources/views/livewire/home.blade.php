@@ -1,3 +1,7 @@
+@section('content')
+
 <div>
-    {{-- Because she competes with no one, no one can compete with her. --}}
+    <h1>I am home.blade</h1>
 </div>
+
+@endsection

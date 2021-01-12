@@ -1,1 +1,1 @@
-Hello World
+@yield('content')
