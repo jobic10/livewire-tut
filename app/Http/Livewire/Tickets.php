@@ -19,8 +19,7 @@ class Tickets extends Component
 
     public function render()
     {
-        return view('livewire.tickets',
-    [
+        return view('livewire.tickets',[
         'tickets' => SupportTicket::all()
     ]);
     }
