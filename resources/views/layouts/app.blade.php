@@ -13,22 +13,17 @@
     @livewireScripts
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
-<body class="flex justify-center">
-    <div class="flex w-full justify-center">
-        <a href="/">Home</a>
-        <a href="/login">Login</a>
+<body class="flex flex-wrap justify-center">
+    <div class="flex w-full justify-left px-4 bg-yellow-900 text-white">
+        <a class="mx-3 py-4" href="/">Home</a>
+        <a  class="mx-3 py-4" href="/login">Login</a>
     </div>
-    @yield('content')
-<div class="w-10/12 my-10 flex">
-    {{--<div class="rounded border p-2 w-5/12">
-        @livewire('tickets')
+    <div class="my-10 justify-left">
+        @yield('content')
     </div>
+    <div class="w-10/12 my-10 flex">
 
-    <div class="rounded border p-2 mx-2 w-7/12">
-        @livewire('comments')
     </div>
-    </div> --}}
-    {{-- <livewire:comments newComment='I am props comment' /> --}}
 </body>
 </html>
 
