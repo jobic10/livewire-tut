@@ -17,5 +17,8 @@
         "lodash": "^4.17.19",
         "postcss": "^8.2.2",
         "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
+    },
+    "dependencies": {
+        "turbolinks": "^5.2.0"
     }
 }
