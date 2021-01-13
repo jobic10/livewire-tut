@@ -1,3 +1,5 @@
+@section('content')
 <div>
-    {{-- Care about people's approval and you will be their prisoner. --}}
-</div>
+    <h3>Register</h3>
+    </div>
+@endsection
