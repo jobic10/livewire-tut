@@ -18,7 +18,7 @@
         <a class="mx-3 py-4" href="/">Home</a>
         <a  class="mx-3 py-4" href="/login">Login</a>
     </div>
-    <div class="my-10 justify-left">
+    <div class="w-4/6 justify-left">
         @yield('content')
     </div>
     <div class="w-10/12 my-10 flex">
